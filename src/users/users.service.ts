@@ -14,4 +14,12 @@ export class UsersService {
             }
         })
     }
+
+    async findUserById(id:number):Promise<User>{
+        return await this.userModel.findOne({
+            where:{
+                id:id
+            }
+        })
+    }
 }

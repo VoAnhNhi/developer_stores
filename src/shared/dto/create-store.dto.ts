@@ -17,10 +17,10 @@ export class CreateStoreDto {
     ownerId:number = null
 
     static fromStore(store:Store):CreateStoreDto{
-        return DtoUtils.transformDtoToModel(store,CreateStoreDto) as CreateStoreDto
+        return DtoUtils.transformModelToDto(store,CreateStoreDto) as CreateStoreDto
     }
 
     static toStore(createStoreDto:CreateStoreDto):Store{
-        return DtoUtils.transformModelToDto(createStoreDto,Store) as Store
+        return DtoUtils.transformDtoToModel(createStoreDto,Store) as Store
     }
 }
