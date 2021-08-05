@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { StoresModule } from './stores/stores.module';
@@ -17,6 +16,5 @@ import { SequelizeModule } from '@nestjs/sequelize';
     synchronize:false,
     models:[]
   }),AuthModule, UsersModule, StoresModule],
-  providers: [AppService],
 })
 export class AppModule {}

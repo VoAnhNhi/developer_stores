@@ -10,6 +10,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from '../shared/models/user.model';
 import { UsersService } from '../users/users.service';
 import { JwtStrategy } from './jwt.strategy';
+import { UserController } from './user.controller';
 @Module({
   imports:[UsersModule,
     PassportModule,
@@ -21,7 +22,7 @@ import { JwtStrategy } from './jwt.strategy';
     }),
     SequelizeModule.forFeature([User])
   ],
-  controllers: [AuthController],
+  controllers: [AuthController, UserController],
   providers: [AuthService,UsersService,LocalStrategy,JwtStrategy],
   exports:[AuthService]
 })
